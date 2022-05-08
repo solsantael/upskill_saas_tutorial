@@ -1,15 +1,16 @@
 
 <div class="container">
-   <div class:"roow">
-   <h3 class="text-center"> Contact Us</h3>
+   <div class:"row">
+    <h3 class="text-center">Contact Us</h3>
 
-  <div class="col-md-4 col-md-offset-4">
-    <div class="well">
-    <%= form_for "/contacts" do |f| %>
+    <div class="col-md-4 col-md-offset-4">
+     <%= flash[:notice] %>
+     <div class="well">
+     <%= form_for @contact do |f| %>
       <div class="form-group">
        <%= f.label :name  %>
        <%= f.text_field :name, class: 'form-control' %>
-     </div>
+      </div>
    
  
      <div class="form-group">
@@ -18,13 +19,13 @@
      </div>
   
   
-    <div class="form-group">
-       <%= f.label :Comments  %>
-       <%= f.text_area :Comments, class: 'form-control' %>
+     <div class="form-group">
+       <%= f.label :Comments %>
+       <%= f.text_area :comments, class: 'form-control' %>
      </div>
   
      <%= f.submit 'Submit', class: 'btn btn-defualt' %>
-  <% end %>
+   <% end %>
     </div>
    </div>
  </div>
